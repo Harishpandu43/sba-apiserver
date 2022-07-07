@@ -17,7 +17,7 @@ public class Consumer {
     private String endpoint;
     
     @SqsListener(value = "${cloud.aws.end-point.uri}",deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
-    public void processMessage(TestMessage message) {
-        log.info("Message from SQS {}", message.getMessage());
+    public void processMessage(String message) {
+        log.info("Message from SQS {}", message);
     }
 }
